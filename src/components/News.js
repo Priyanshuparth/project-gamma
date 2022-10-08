@@ -39,15 +39,12 @@ export class News extends Component {
       <div className="constiner my-3">
         <h2>NewsMonk - Top headlines</h2>
         <div className="row">
-          <div className="col md-4">
-            <NewsItem title="mytitle" description="mydesc" imageUrl="https://a4.espncdn.com/combiner/i?img=%2Fi%2Fcricket%2Fcricinfo%2F1219926_1296x729.jpg"/>
+        {this.state.articles.map((element)=>{
+            return <div className="col md-4"  key={element.url}>
+            <NewsItem title={element.title} description={element.description} imageUrl={element.urlToImage} newsurl={element.url}/>
           </div>
-          <div className="col md-4">
-            <NewsItem title="mytitle" description="mydesc" imageUrl="https://a4.espncdn.com/combiner/i?img=%2Fi%2Fcricket%2Fcricinfo%2F1219926_1296x729.jpg"/>
-          </div>
-          <div className="col md-4">
-            <NewsItem title="mytitle" description="mydesc" imageUrl="https://a4.espncdn.com/combiner/i?img=%2Fi%2Fcricket%2Fcricinfo%2F1219926_1296x729.jpg"/>
-          </div>
+        })}
+        
         </div>
       </div>
     );
