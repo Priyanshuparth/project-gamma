@@ -30,7 +30,7 @@ export class News extends Component {
         this.state=
         {
             articles:this.articles,
-            loading:false
+            loading:true
         }
     }
 
